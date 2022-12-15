@@ -1,0 +1,2 @@
+No se pudo agregar todo el proyecto porque los archivos pesaban muchísimo, por lo que solo se agregaron los 
+archivos principales.
