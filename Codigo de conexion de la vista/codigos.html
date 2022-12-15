@@ -1,0 +1,52 @@
+<br><br><br>
+<h1  style = 'margin-left:2%;'>Escribe tu propio código:</h1>
+<button type="button" name="button" (click)='mostrarC()' style = 'margin-left:2%;' class="btn btn-sm btn-success">
+  Escribir codigo</button>
+<br><br>
+<section *ngIf = 'mostrarCodigo' style = 'margin-left:2%;' id = 'secCodigos'>
+<form #projectForm = 'ngForm' (ngSubmit) = 'onSubmit(projectForm)'>
+  <p>
+    <label for="">Id del codigo</label><br>
+    <input type="text" name="idd" #id = 'ngModel' [(ngModel)] = 'idd' value="" [disabled] = '!buscar'>
+  </p>
+  <p>
+    <label for="">Lenguaje de programación</label><br>
+    <input type="text" name="lenguaje" #lenguaje = 'ngModel' [(ngModel)] = 'proyecto.lenguaje' value="">
+  </p>
+  <p>
+    <label for="">Codigo del lenguaje</label><br>
+    <textarea name="codigo" #codigo = 'ngModel' [(ngModel)] = 'proyecto.codigo' value="" style='width:30%'></textarea>
+  </p>
+  <p>
+    <label for="">Paradigma del lenguaje</label><br>
+    <input type="text" name="tipolenguaje" #tipolenguaje = 'ngModel' [(ngModel)] = 'proyecto.tipolenguaje' value="">
+  </p>
+  <p>
+    <label for="">Usos de ese lenguaje</label><br>
+    <input type="text" name="usoprincipal" #usoprincipal = 'ngModel' [(ngModel)] = 'proyecto.usoprincipal' value="">
+  </p>
+  <input type="submit" name="" value="Enviar" class="btn btn-sm btn-success">&nbsp;
+  <button type="button" name="button" (click) = "cambiarBus()" class="btn btn-sm btn-warning">Habilitar ID</button>&nbsp;
+  <button type="button" name="button" (click) = "actualizarDatos(proyecto)" class="btn btn-sm btn-secondary">Actualizar Documento</button>&nbsp;
+  <button type="button" name="button" (click) = "deleteDatos(proyecto._id)" class="btn btn-sm btn-danger">Borrar Datos</button>&nbsp;
+  <button type="button" name="button" (click) = "getDato(idd)" class="btn btn-sm btn-info">Buscar Registro</button>
+
+</form>
+</section>
+<div class="h-100 p-5 bg-light border rounded-3">
+<div class="h-100 p-5 bg-light border rounded-3" id = "EpyC"
+*ngFor = 'let element of lenguaje; index as i'>
+<div class="" style = "margin-right: 2%;">
+    <h1 style = 'margin-right: 5%;'>{{lenguaje[i]}}</h1>
+    <p>{{id[i]}}</p>
+</div>
+  <div class="h-100 p-5 bg-light border rounded-3" id = "Epy">
+    <pre>{{codigo[i]}}</pre>
+  </div>
+  <div class="h-100 p-5 bg-light border rounded-3" id = "Epy2">
+    <pre><strong>Lenguaje</strong> {{tipo[i]}}</pre>
+    <pre><strong>Uso</strong>  {{uso[i]}}</pre>
+  </div>
+
+</div>
+</div>
